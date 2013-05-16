@@ -42,9 +42,9 @@ Gem is currently developed under 1.9.3, although it should work under 1.8.7.
 There is some limited support for handling character encodings in the
 proper ruby 1.9 way.
 
-### load_from_kev, load_from_form_vars
+### new_from_kev, new_from_form_vars
 
-When using ContextObject#load_from_kev or #load_from_form_vars, input
+When using ContextObject#new_from_kev or #new_from_form_vars, input
 will be assumed to be UTF8, unless a ctx_enc value is present specifying 
 ISO-8859-1.  The actual ruby #encoding of the input string/stream is ignored,
 data will be force_encoded on read. If input is specified ISO-8859-1 with 
@@ -53,7 +53,7 @@ ctx_enc data _will_ be _transcoded_ to UTF8 on read.
 Any illegal bytes for the input character encoding _will_ be replaced by
 the unicode replacement symbol ("\uFFFD") on read.
 
-### load_from_xml
+### new_from_xml
 
 Input will be assumed UTF8, and force_encoded to UTF8. Illegal bytes in input 
 for UTF8 will be replaced by unicode replacement char ("\uFFFD"). 
